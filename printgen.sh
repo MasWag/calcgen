@@ -21,6 +21,8 @@ if [ $1 == "-h" ] || [ $1 == "-help" ]; then
 ------------------------------
 問題の種類の番号と内容の対応は以下の様になっています。
 1:正負の数の四則演算
+2:文字と式の計算問題
+3:1次方程式の計算問題
 EOS
     exit;
 fi
@@ -37,6 +39,10 @@ EOS
 case $1 in
     1)
 	echo "\section*{正負の数計算問題}";;
+    2)
+	echo "\section*{文字と式計算問題}";;
+    3)
+	echo "\section*{1次方程式計算問題}";;
 esac
 
 cat << EOS
@@ -47,6 +53,10 @@ EOS
 case $1 in
     1)
 	./calcgen1.sh $2;;
+    2)
+	./calcgen2.sh $2;;
+    3)
+	./calcgen3.sh $2;;
 esac
 
 cat << EOS
