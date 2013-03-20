@@ -31,10 +31,13 @@ fi
 
     case $((4*$RANDOM/32797)) in
 	0 )
+	    if [ $b -eq $c ] ; then b=$(( $c + 1 ));fi
 	    echo " \item \$ $a x + $b = $c \$ ";;
 	1 ) 
+	    if [ $b -eq $c ] ; then b=$(( $c + 1 ));fi
 	    echo " \item $ $a x- $b = $c \$ ";;
 	2 ) 
+	    if [ $a -eq $c ] ; then a=$(( $c + 1 ));fi
 	    if [ $c -eq 1 ] ; then
 		c=""
 	    elif [ $c -eq -1 ] ; then
@@ -42,6 +45,7 @@ fi
 	    fi
 	    echo " \item $ $a x+ $b = $c x  \$ ";;
 	3 ) 
+	    if [ $a -eq $c ] ; then a=$(( $c + 1 ));fi
 	    if [ $c -eq 1 ] ; then
 		c=""
 	    elif [ $c -eq -1 ] ; then
