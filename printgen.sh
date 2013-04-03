@@ -23,6 +23,7 @@ if [ $1 == "-h" ] || [ $1 == "-help" ]; then
 1:正負の数の四則演算
 2:文字と式の計算問題
 3:1次方程式の計算問題
+4:二元1次方程式の計算問題
 EOS
     exit;
 fi
@@ -33,6 +34,7 @@ cat <<EOS
 \setlength{\textheight}{254mm}
 \usepackage{setspace}
 \usepackage{multicol}
+\usepackage{amsmath}
 \begin{document}
 EOS
 
@@ -43,6 +45,8 @@ case $1 in
 	echo "\section*{文字と式計算問題}";;
     3)
 	echo "\section*{1次方程式計算問題}";;
+    3)
+	echo "\section*{二元1次方程式計算問題}";;
 esac
 
 cat << EOS
@@ -57,6 +61,8 @@ case $1 in
 	./calcgen2.sh $2;;
     3)
 	./calcgen3.sh $2;;
+    4)
+	./calcgen4.sh $2;;
 esac
 
 cat << EOS
